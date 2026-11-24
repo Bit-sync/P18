@@ -357,7 +357,6 @@ int main()
             printf("%s has been removed as a donor\n", m);
             }
         }
-
         if (n==7) T--;
     }
 }
