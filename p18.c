@@ -44,8 +44,20 @@ void reg(struct d *dx)
         }
     }
     I[c]=dx->id;
-    printf("Enter your Blood Group: ");
-    scanf("%3s",dx->bg);
+    t=1;
+    while (t)
+    {
+        t=0;
+        printf("Enter your Blood Group: ");
+        scanf("%3s",dx->bg);
+        scanf("%*[^\n]");
+        scanf("%*c");
+        if (!(!strcmp(dx->bg,"A+") || !strcmp(dx->bg,"A-") || !strcmp(dx->bg,"AB+") || !strcmp(dx->bg,"AB-") || !strcmp(dx->bg,"B+") || !strcmp(dx->bg,"B-") || !strcmp(dx->bg,"O+") || !strcmp(dx->bg,"O+")))
+        {
+            t=1;
+            printf("Thats not a valid blood group\n");
+        }
+    }
     t=1;
         while (t)
     { 
@@ -73,7 +85,7 @@ void reg(struct d *dx)
     C[c]=dx->cnt;
     c++;
     printf("Enter your age: ");
-    scanf("%2d",&(dx->ag));
+    scanf("%3d",&(dx->ag));
     scanf("%*[^\n]");
     scanf("%*c");
     printf("Enter donation date (dd/mm/yyyy): ");
@@ -137,8 +149,20 @@ int main()
         if (n==3)
         {
             char b[4];
-            printf("Enter blood group: ");
-            scanf("%3s", b);
+            int t=1;
+            while (t)
+            {
+                t=0;
+                printf("Enter your Blood Group: ");
+                scanf("%3s",dx->bg);
+                scanf("%*[^\n]");
+                scanf("%*c");
+                if (!(!strcmp(dx->bg,"A+") || !strcmp(dx->bg,"A-") || !strcmp(dx->bg,"AB+") || !strcmp(dx->bg,"AB-") || !strcmp(dx->bg,"B+") || !strcmp(dx->bg,"B-") || !strcmp(dx->bg,"O+") || !strcmp(dx->bg,"O+")))
+                {
+                    t=1;
+                    printf("Thats not a valid blood group\n");
+                }
+            }
             for (int i=0; i<c; i++)
             {
                 if (strcmp(d[i].bg,b)==0) printf("%s %d %s %d %lld %s\n", d[i].name, d[i].id, d[i].bg, d[i].ag, d[i].cnt, d[i].dt);
@@ -254,7 +278,7 @@ int main()
                 {
                     printf("Enter the updated information: ");
                     int u;
-                    scanf("%2d", &u);
+                    scanf("%3d", &u);
                     for (int i=0; i<c; i++)
                     {
                         if (d[i].id==id)
@@ -268,7 +292,20 @@ int main()
                 {
                     printf("Enter the updated information: ");
                     char u[4];
-                    scanf("%3s", u);
+                    int t=1;
+                    while (t)
+                    {
+                        t=0;
+                        printf("Enter your Blood Group: ");
+                        scanf("%3s",dx->bg);
+                        scanf("%*[^\n]");
+                        scanf("%*c");
+                        if (!(!strcmp(dx->bg,"A+") || !strcmp(dx->bg,"A-") || !strcmp(dx->bg,"AB+") || !strcmp(dx->bg,"AB-") || !strcmp(dx->bg,"B+") || !strcmp(dx->bg,"B-") || !strcmp(dx->bg,"O+") || !strcmp(dx->bg,"O+")))
+                        {
+                            t=1;
+                            printf("Thats not a valid blood group\n");
+                        }
+                    }
                     for (int i=0; i<c; i++)
                     {
                         if (d[i].id==id)
