@@ -90,7 +90,7 @@ int main()
     struct d d[10000];
     while (T)
     {   
-        printf("\n\n==============================================|\n(1) Register a donor|\n(2) Print the donors list|\n(3) Search for donors according to blood group|\n(4) Search the donor according to ID|\n(5) Update a donor's data by ID|\n(6) Delete a donor by ID|\n(7) Exit the program|\n==============================================|\n\n");
+        printf("\n\n===============================================|\n(1) Register a donor                           |\n(2) Print the donors list                      |\n(3) Search for donors according to blood group |\n(4) Search the donor according to ID           |\n(5) Update a donor's data by ID                |\n(6) Delete a donor by ID                       |\n(7) Exit the program                           |\n===============================================|\n\n");
         int n=0;
         printf("Enter number: ");
         int r = scanf("%d", &n);
@@ -171,7 +171,8 @@ int main()
                     if (t) printf("This ID doesnt exist\n");
                 }
                 while (1)
-                {
+                {   
+                    printf("Options: name, age, id, blood group, contact\n");
                     printf("Edit donor's ");
                     fgets(s, 100, stdin);
                     if ((!strcmp(s,"name\n") || !strcmp(s,"age\n") || !strcmp(s,"id\n") || !strcmp(s,"blood group\n") || !strcmp(s,"contact\n") || !strcmp(s,"date\n"))) break;
@@ -357,6 +358,7 @@ int main()
             printf("%s has been removed as a donor\n", m);
             }
         }
+
         if (n==7) T--;
     }
 }
