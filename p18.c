@@ -63,7 +63,7 @@ void reg(struct d *dx)
     { 
         t=0;
         printf("Enter your contact info (10 digits): ");
-        dx->cnt;
+        dx->cnt=0;
         scanf("%lld",&(dx->cnt));
         scanf("%*[^\n]");
         scanf("%*c");
@@ -196,7 +196,7 @@ int main()
                 }
                 while (1)
                 {   
-                    printf("Options: name, age, id, blood group, contact\n");
+                    printf("Options: name, age, id, blood group, contact, date\n");
                     printf("Edit donor's ");
                     fgets(s, 100, stdin);
                     if ((!strcmp(s,"name\n") || !strcmp(s,"age\n") || !strcmp(s,"id\n") || !strcmp(s,"blood group\n") || !strcmp(s,"contact\n") || !strcmp(s,"date\n"))) break;
@@ -277,7 +277,7 @@ int main()
                 if (!strcmp(s,"age\n"))
                 {
                     printf("Enter the updated information: ");
-                    int u;
+                    int u=0;
                     scanf("%3d", &u);
                     for (int i=0; i<c; i++)
                     {
@@ -323,6 +323,8 @@ int main()
                         t=0;
                         printf("Enter the updated information: ");
                         scanf("%lld",&u);
+                        scanf("%*[^\n]");
+                        scanf("%*c");
                         if (u<1000000000 || u>9999999999)
                             {
                                 printf("Contact number must be 10 digits long\n");
@@ -394,8 +396,6 @@ int main()
             printf("%s has been removed as a donor\n", m);
             }
         }
-
         if (n==7) T--;
     }
-    
 }
